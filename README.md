@@ -18,7 +18,7 @@ ___Termux e Linux:___
 
     apt-get update && apt-get upgrade
     apt-get install git
-    git clone
+    git clone https://github.com/AsmInstrutor/shell-bomb.git
     
 # Para funcionar corretamenta instale:
     apt-get install jq
