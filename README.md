@@ -27,8 +27,15 @@ ___Termux e Linux:___
     
 # Modo de uso:
     chmod +x shell-bomb
-    ./shell-bomb -i <ip para consultar>
-    ./shell-bomb -
+  - ./shell-bomb -i <ip para consultar>    Consulta ip
+   
+  - ./shell-bomb -d <dns para consultar>   Consulta dns
+   
+  - ./shell-bomb -o                        Printa seu ip
+   
+  - ./shell-bomb -b                        Consulta seu ip
+   
+  - ./shell-bomb -h                        Ajuda de como usar a ferramenta
     
 # Criador:
 
