@@ -22,7 +22,7 @@ ___Termux e Linux:___
     
 # Para funcionar corretamenta instale:
     apt-get install jq
-    apt-install python
+    apt-get install python
     pip install lolcat
     
 # Modo de uso:
