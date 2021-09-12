@@ -1,0 +1,125 @@
+#!/bin/bash
+
+# Search IP
+if [ "$1" == "-i" ]
+then
+	sleep 1
+	clear
+	cat teste|lolcat
+	printf "\n\n"
+
+	printf "Region Code:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.region_code'
+	printf "ID:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.ip'
+	printf "Postal code:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.postal_code'
+	printf "Country code:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.country_code'
+	printf "City:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.city'
+	printf "dma code:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.dma_code'
+	printf "Last update:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.last_update'
+	printf "Latitude:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.latitude'
+	printf "Longitude:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.longitude'
+	printf "Hostname:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.hostnames[]'
+	printf "Country Name:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.country_name'
+	printf "Area code:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.area_code'
+	printf "Org:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.org'
+	printf "Module:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.module'
+	printf "OS:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.os'
+	printf "Asn:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.asn'
+	printf "isp:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.isp'
+	printf "IP:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.ip_str'
+	printf "Ports open:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.ports[]'
+
+
+#Search DNS
+elif [ "$1" == "-d" ]
+then
+	printf "Country code:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.country_code'
+	printf "City:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.city'
+	printf "Latitude:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.latitude'
+	printf "Longitude:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.longitude'
+	printf "Country name:"
+	curl -s https://api.shodan.io/shodan/host/$2?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t | jq -r '.country_name'
+
+
+#My ip
+
+elif [ "$1" == "-o" ]
+then
+	printf "My ip is:"
+	curl https://api.shodan.io/tools/myip?key=QjkkhQYMEsIpW6eHU8BeNVJGXzXaDR3t
+	printf "\n"
+
+
+#Consult my ip
+
+elif [ "$1" == "-b" ]
+then
+	printf "Ip:"
+	curl -s https://ipinfo.io | jq -r '.ip'
+	printf "Hostname:"
+	curl -s https://ipinfo.io | jq -r '.hostname'
+	printf "City:"
+	curl -s https://ipinfo.io | jq -r '.city'
+	printf "Region:"
+	curl -s https://ipinfo.io | jq -r '.region'
+	printf "Country:"
+	curl -s https://ipinfo.io | jq -r '.country'
+	printf "Loc:"
+	curl -s https://ipinfo.io | jq -r '.loc'
+	printf "Org:"
+	curl -s https://ipinfo.io | jq -r '.org'
+	printf "Postal Code:"
+	curl -s https://ipinfo.io | jq -r '.postal'
+	printf "Timezone:"
+	curl -s https://ipinfo.io | jq -r '.timezone'
+
+
+#Help
+
+elif [ "$1" == "-h" ]
+then
+	clear
+	printf "\n"
+	echo "Mode of use:"
+	echo " ./shell-bomb <parameter>"
+	echo " Options:"
+	echo " -i <ip>    Ip search  "
+	echo " -d <dns>   DNS Search "
+	echo " -o         My ip      "
+	echo " -b         Search my ip"
+	echo " -h         Help       "
+else
+	clear
+        printf "\n"
+	echo " Mode of use:"
+	echo " ./shell-bomb <parameter>"
+	echo " Options:"
+        echo " -i <ip>    Ip search  "
+	echo " -d <dns>   DNS Search "
+	echo " -o         My ip      "
+	echo " -b         Search my ip"
+	echo " -h         Help       "
+fi
+
